@@ -1,0 +1,333 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #FFF5F8;
+  --foreground: #4A4063;
+  --card: #FFFFFF;
+  --card-foreground: #4A4063;
+  --popover: #FFFFFF;
+  --popover-foreground: #4A4063;
+  --primary: #9B7EBD;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFB4D1;
+  --secondary-foreground: #4A4063;
+  --muted: #F3E8FF;
+  --muted-foreground: #8B7FA8;
+  --accent: #FFE5EC;
+  --accent-foreground: #4A4063;
+  --destructive: #FF6B9D;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(155, 126, 189, 0.15);
+  --input: transparent;
+  --input-background: #FEFAFF;
+  --switch-background: #E0D4F7;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #C8B6E2;
+  --chart-1: #FFB4D1;
+  --chart-2: #C4B5FD;
+  --chart-3: #A7F3D0;
+  --chart-4: #FDE68A;
+  --chart-5: #FBCFE8;
+  --radius: 1.25rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #4A4063;
+  --sidebar-primary: #9B7EBD;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F3E8FF;
+  --sidebar-accent-foreground: #4A4063;
+  --sidebar-border: rgba(155, 126, 189, 0.15);
+  --sidebar-ring: #C8B6E2;
+  
+  /* Colores pastel adicionales para categorías */
+  --pastel-pink: #FFB4D1;
+  --pastel-purple: #C4B5FD;
+  --pastel-mint: #A7F3D0;
+  --pastel-yellow: #FDE68A;
+  --pastel-peach: #FECACA;
+  --pastel-blue: #BAE6FD;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos 3D tipo plastilina - Inspirado en diseño alegre y colorido */
+@layer utilities {
+  .clay-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    box-shadow: 
+      0 12px 24px rgba(155, 126, 189, 0.2),
+      0 6px 12px rgba(255, 180, 209, 0.15),
+      0 2px 6px rgba(167, 243, 208, 0.1),
+      inset 0 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0 -3px 6px rgba(155, 126, 189, 0.08);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    position: relative;
+  }
+
+  .clay-card::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+  }
+
+  .clay-button {
+    background: linear-gradient(135deg, var(--color) 0%, var(--color-dark) 100%);
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .clay-button::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    right: 8px;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .clay-button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 12px 24px rgba(0, 0, 0, 0.25),
+      0 6px 12px rgba(0, 0, 0, 0.18),
+      0 3px 6px rgba(0, 0, 0, 0.12),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+
+  .clay-button:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 
+      0 6px 12px rgba(0, 0, 0, 0.18),
+      0 2px 6px rgba(0, 0, 0, 0.12),
+      inset 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .clay-number {
+    box-shadow: 
+      0 6px 12px rgba(0, 0, 0, 0.15),
+      0 3px 6px rgba(0, 0, 0, 0.1),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clay-number::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    right: 4px;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .clay-icon {
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15)) 
+            drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
+            drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
+  }
+
+  .clay-blob {
+    border-radius: 45% 55% 52% 48% / 48% 44% 56% 52%;
+    animation: blob-morph 8s ease-in-out infinite;
+  }
+
+  @keyframes blob-morph {
+    0%, 100% {
+      border-radius: 45% 55% 52% 48% / 48% 44% 56% 52%;
+    }
+    25% {
+      border-radius: 52% 48% 45% 55% / 55% 60% 40% 45%;
+    }
+    50% {
+      border-radius: 48% 52% 58% 42% / 42% 48% 52% 58%;
+    }
+    75% {
+      border-radius: 55% 45% 48% 52% / 52% 55% 45% 48%;
+    }
+  }
+
+  .clay-glow {
+    position: relative;
+  }
+
+  .clay-glow::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .clay-glow:hover::after {
+    opacity: 1;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
